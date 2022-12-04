@@ -11,21 +11,21 @@
 // This function performs heavy computations,
 // its run time depends on x and y values
 // DO NOT change the function
-double heavy(int x, int y) {
-	int i, loop;
-	double sum = 0;
+double heavy(int x, int y)
+{
+    int i, loop;
+    double sum = 0;
 
-	if (sqrt((x - 0.75*SIZE)*(x - 0.75*SIZE) + (y - 0.25*SIZE)*(y - 0.25*SIZE)) < RADIUS)
-		loop = 5*x*y;
-	else
-		loop = y + x;
+    if (sqrt((x - 0.75 * SIZE) * (x - 0.75 * SIZE) + (y - 0.25 * SIZE) * (y - 0.25 * SIZE)) < RADIUS)
+        loop = 5 * x * y;
+    else
+        loop = y + x;
 
-	for (i = 0; i < loop*HEAVY; i++)
-		sum += sin(exp(cos((double)i / HEAVY)));
+    for (i = 0; i < loop * HEAVY; i++)
+        sum += sin(exp(cos((double)i / HEAVY)));
 
-	return  sum;
+    return sum;
 }
-
 
 // STATIC
 int main(int argc, char **argv)
