@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
 
 #define HEAVY  1000
 #define SIZE       40
@@ -28,10 +29,13 @@ int main(int argc, char *argv[]) {
 	int x, y;
 	int size = SIZE;
 	double answer = 0;
-
+ time_t t1; // not a primitive datatype
+    time_t t2; // not a primitive datatype
+        time(&t1);
 	for (x = 0; x < size; x++)
 		for (y = 0; y < size; y++) 
 			answer += heavy(x, y);
-
+    time(&t2);
 	printf("answer = %e\n", answer);
+	        printf("Delay = %f\n", difftime(t2, t1));
 }
